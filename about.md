@@ -6,7 +6,7 @@ permalink: /about/
 <!---
 Some information about you!
 -->
-This is jsut a place to track my thoughts about code and technology.
+This is just a place to track my thoughts about code and technology.
 
 <!---
 ### More Information
