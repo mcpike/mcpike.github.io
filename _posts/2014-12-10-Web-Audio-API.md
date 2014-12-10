@@ -32,26 +32,19 @@ The example below assumes that you have a &lt;audio&gt; tag on your HTML page wh
 {% highlight javascript %}
 
 // 1. Create audio context, see: https://developer.mozilla.org/en-US/docs/Web/API/AudioContext
-
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
 // 2. Inside the context, create sources
-
-var audio  = document.querySelector('audio'); // creating a reference to the &lt;audio&gt; tag
-
+var audio  = document.querySelector('audio'); // creating a reference to the <audio> tag
 var source = audioCtx.createMediaElementSource(audio);
 
 // 3. Create effects nodes
-
 var analyser = audioCtx.createAnalyser();
 
-
 // 4. Choose final destination of audio
-
 analyser.connect(audioCtx.destination);
 
 // 5. Connect the sources up to the effects
-
 source.connect(analyser);
 
 {% endhighlight %}
