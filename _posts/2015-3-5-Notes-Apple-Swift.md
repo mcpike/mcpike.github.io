@@ -4,7 +4,6 @@ title: Notes on Apple's Swift Language
 tags: swift apple ios 
 ---
 
-# Notes on Apple's Swift Language
 
 ## General Notes
 
@@ -43,22 +42,19 @@ __require__ double quotes
 #### basic example
 
 {% highlight javascript %}
-  let name = "Patrick"
-    println("My name is \(name)")
+let name = "Patrick"
+println("My name is \(name)")
 {% endhighlight %}
 
   
-
 #### eval example
 
 {% highlight javascript %}
-    var quantity = 2.0
-    var price = 15.0
-    println("The total cost is \(quantity * price)")
+var quantity = 2.0
+var price = 15.0
+println("The total cost is \(quantity * price)")
 {% endhighlight %}
 
-
- 
 
 ## Control Flow
 
@@ -72,22 +68,24 @@ __require__ double quotes
 ### for in
 
 {% highlight javascript %}
-    str = "mystring"
+str = "mystring"
+str = "mystring"
 
-    for c in str {
-      println(c)
-    }
+for c in str {
+  println(c)
+}
 
-    /*
-    m
-    y
-    s
-    t
-    r
-    i
-    n
-    g
-    */
+/*
+m
+y
+s
+t
+r
+i
+n
+g
+*/
+
 {% endhighlight %}
 
 
@@ -95,31 +93,28 @@ __require__ double quotes
 ### ranges: 1...5  vs.  1..<5
 
 {% highlight javascript %}
-  for digit in 1...5 {
-        println(digit)
-    }
+for digit in 1...5 {
+    println(digit)
+}
 
-    /*
-    1
-    2
-    3
-    4
-    5
-    */
-{% endhighlight %}
-  
+/*
+1
+2
+3
+4
+5
+*/
 
-{% highlight javascript %}
- for digit in 1..<5 {
-     println(digit)
-    }
+for digit in 1..<5 {
+ println(digit)
+}
 
-    /*
-    1
-    2
-    3
-    4
-    */
+/*
+1
+2
+3
+4
+*/
 {% endhighlight %}
 
    
@@ -129,9 +124,9 @@ __require__ double quotes
 note: no parens required, nor recommended.  Also, For-In is preferred.
 
 {% highlight javascript %}
-    for var i=0; i < 3; ++i {
-      // do something
-    } 
+for var i=0; i < 3; ++i {
+  // do something
+} 
 {% endhighlight %}
 
 
@@ -145,38 +140,28 @@ while and do-while
 ### declaring functions:
 
 {% highlight javascript %}
-  func myFunction() {
-      // do something
-    }
+func myFunction() {
+  // do something
+}
 {% endhighlight %}
   
 
 ### calling functions
 
 {% highlight javascript %}
-   func greetPerson(name : String) {
-      println("Hello, \(name)")
-    }
-
-    greetPerson("Patrick")
-
-    // "Hello, Patrick"
-
+myfunction()
 {% endhighlight %}
-
-    myfunction()
 
 ### passing parameters
 
 {% highlight javascript %}
-   func greetPerson(name : String) {
-      println("Hello, \(name)")
-    }
+func greetPerson(name : String) {
+  println("Hello, \(name)")
+}
 
-    greetPerson("Patrick")
+greetPerson("Patrick")
 
-    // "Hello, Patrick"
-
+// "Hello, Patrick"
 {% endhighlight %}
  
 
@@ -189,39 +174,47 @@ In other words, the following code will create an error:
     }
 {% endhighlight %}
 
+By default parameters are immutable.
+In other words, the following code will create an error:
 
+{% highlight javascript %}
+func willFail(name : String) {
+  name = 'foo'  // this will error
+}
+{% endhighlight %}
 
 ### default parameters
 
 {% highlight javascript %}
-  func greetPerson(name : String = "Cool Person!") {
-      println("Hello, \(name)")
-    }
+func greetPerson(name : String = "Cool Person!") {
+  println("Hello, \(name)")
+}
 
-    greetPerson()
-    // "Hello, Cool Person!"
-    
-    greetPerson("Patrick")
-    // ERROR
-    
-    greetPerson(name: "Patrick")
-    // "Hello, Patrick"
+greetPerson()
+// "Hello, Cool Person!"
+
+greetPerson("Patrick")
+// ERROR
+
+greetPerson(name: "Patrick")
+// "Hello, Patrick"
 {% endhighlight %}
+
 
 ### Return values
 
 When returning a value, you must specify the data type of the value that will be returned:
 
 {% highlight javascript %}
- // This works
-    func returnSomething() -> String {
-      return "bar"
-    }
+// This works
+func returnSomething() -> String {
+  return "bar"
+}
 
-    // This fails due to wrong return data type 
-    func returnSomething() -> Int {
-      return "bar"
-    }
+// This fails due to wrong return data type 
+func returnSomething() -> Int {
+  return "bar"
+}
 {% endhighlight %}
    
 ## Collections
