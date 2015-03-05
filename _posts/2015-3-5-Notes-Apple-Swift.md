@@ -1,3 +1,8 @@
+---
+layout: post
+title: Notes on Apple's Swift Language  
+tags: swift apple ios 
+---
 
 # Notes on Apple's Swift Language
 
