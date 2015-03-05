@@ -4,6 +4,7 @@ title: Notes on Apple's Swift Language
 tags: swift apple ios 
 ---
 
+note: this is a work in progress.
 
 ## General Notes
 
